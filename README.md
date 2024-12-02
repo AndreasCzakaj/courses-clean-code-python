@@ -1,6 +1,10 @@
 # initial steps
 `pip install -r requirements.txt`
 
+In vscode, install 
+* "Python Refactoring" by Yotam Alon
+* "Pyrefact" by Olle Lindgren
+
 # run once
 ``` bash
 cd fibonacci
