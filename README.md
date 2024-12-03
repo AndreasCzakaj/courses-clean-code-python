@@ -13,5 +13,5 @@ python3 *.test.py
 # run continuously
 ``` bash
 cd fibonacci
-inotifywait -m -e close_write --format '%w%f' *.py | while read MODFILE;  do py *.test.py; don
+inotifywait -m -e close_write --format '%w%f' *.py | while read MODFILE;  do py *.test.py; done
 ```
