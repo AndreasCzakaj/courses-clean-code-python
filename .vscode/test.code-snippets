@@ -15,7 +15,7 @@
 			"from parameterized import parameterized",
 			"",
 			"",
-			"class UuidGeneratorNaiveRandomImplTest(TestCase):",
+			"class Test(TestCase):",
 			"",
 			"    def setUp(self):",
 			"	     self.sut = None",
