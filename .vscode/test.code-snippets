@@ -15,7 +15,7 @@
 			"from parameterized import parameterized",
 			"",
 			"",
-			"class Test(TestCase):",
+			"class $1Test(TestCase):",
 			"",
 			"    def setUp(self):",
 			"	     self.sut = None",

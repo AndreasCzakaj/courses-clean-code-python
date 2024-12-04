@@ -24,7 +24,10 @@ class App:
 
 
 class Main:
-    def __init__(self, app: App):
+    def __init__(self):
+        dao     = DatabaseAdapter()
+        service = SomeService(dao)
+        app     = App(service)
         self.app = app
 
     def start(self):
@@ -32,7 +35,7 @@ class Main:
 
 
 
-class DatabaseAdapter(ABC):
+class DatabaseAdapter(DatabasePort):
     def get():
         db = TheRealDatabase()
         db.load()     
@@ -44,7 +47,4 @@ class TheRealDatabase:
 
 
 
-dao     = DatabaseAdapter()
-service = SomeService(dao)
-app     = App(service)
-main    = Main(app)
+main = Main()
