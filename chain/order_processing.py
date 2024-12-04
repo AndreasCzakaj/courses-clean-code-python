@@ -61,14 +61,16 @@ class OrderProcessor:
   
   def validateCustomerInput(self, customer: Customer, billingAddress: Address, shippingAddress: Address,
       paymentData: PaymentData):
-    pass
+    if customer.name.__len__() < 1:
+      raise OrderError("customer name is missing")
   
   def checkCustomerAccount(self, customer: Customer):
     if customer.banned == True:
       raise OrderError("Customer hs been banned from ordering")
   
   def validateShoppingCart(self, shoppingCart):
-    pass
+    if shoppingCart.items == []:
+      raise OrderError("shoppingCart is empty")
   
   def createInvoice(self, shoppingCart: ShoppingCart, customer: Customer, billingAddress: Address, shippingAddress: Address,
       paymentData: PaymentData):
