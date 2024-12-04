@@ -15,8 +15,9 @@ class LeaderTest(TestCase):
         #["flash", "run fast"],
         #["oops", "wait and bleed"],
     ])
-    def test_selectHero_Storm(self, heroName, expected):
-         actual = self.sut.selectHero(heroName)
+    def test_useForce_Storm(self, heroName, expected):
+         hero = self.sut.selectHero(heroName)
+         actual = hero.useForce()
          self.assertEqual(actual, expected)
 
 
