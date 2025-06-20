@@ -174,3 +174,71 @@ class DtaRcrd10:
         self.genymdhms = "..."
         self.pszquint = "..."
         self.serverProt = "..."
+
+
+from typing import Protocol
+from abc import ABC, abstractmethod
+
+# Option 1: Using Protocol (recommended for interface-like behavior)
+class ILabelPrinter(Protocol):
+    def print_label(self) -> None:
+        ...
+
+class Labeler:
+    def __init__(self, label_printer: ILabelPrinter):
+        self._str_title: str = "..."
+        self._m_first_name: str = "..."
+        self._m_str_last_name: str = "..."
+        self._i_label_printer: ILabelPrinter = label_printer
+    
+    def print_address(self):
+        # Implementation here
+        pass
+
+
+
+
+from typing import List
+class Labeler:
+  def __init__(self, printer = None):
+    self._a: List[str] = []
+    self.printer = printer
+  
+  def print_address_line(self):
+    for i in range(len(self._a)):
+      self.printer.print_line(self._a[i])
+
+
+
+
+class Labeler:
+  def prAL() -> None:
+    pass
+
+
+from typing import Protocol
+from abc import ABC, abstractmethod
+class ShoppingCart(Protocol):
+    def checkout(self) -> None:
+        ...
+
+class ShoppingCartLoggingDecorator(ShoppingCart):
+  def __init__(self, delegate: ShoppingCart, logger):
+    self._delegate: delegate
+    self._logger: logger
+
+  def checkout(self) -> None:
+    self._logger.log("Checkout started")
+    self.checkout()
+    self._logger.log("Checkout done")
+
+
+
+class Person:
+  def __init__(self):
+    self.firstName = ""
+    self.lastName = ""
+    self.personState = ""
+    self.addrStreetAndNo = ""
+    self.addrZipAndCity = ""
+    self.addrState = ""
