@@ -135,13 +135,42 @@ salary.cents = 3216
 salary.currency = "USD"
 user.setSalary(salary)
 
+s1 = "a"
+s2 = "b"
+s3 = "c"
+s = "{} {} {}".format(s1, s2, s3)
+print(s)
 
-def init():
-    # get the port from env or use default
-let portAsString = process.env.port;
-let defaultPort = 8080;
-let port = portAsString == null ? defaultPort : +portAsString;
+salutation = "a"
+firstName = "b"
+lastName = "c"
+addressLine1 = "{} {} {}".format(salutation, firstName, lastName)
+print(addressLine1)
+#self.printer.printAddressLine(addressLine1)
 
-// start server on given port
-console.log(port);
-}
+
+class ControllerForValidationOfStrings:
+   pass
+
+class ControllerForStorageOfStrings:
+   pass
+
+class NumberValidatingController:
+   pass
+
+def fetchPerson() -> Person:
+   pass
+
+def retrievePersons() -> list[Person]:
+   pass
+
+def getPersonInfo() -> PersonInfo:
+   pass
+
+
+
+class DtaRcrd10:
+    def __init__(self):
+        self.genymdhms = "..."
+        self.pszquint = "..."
+        self.serverProt = "..."
