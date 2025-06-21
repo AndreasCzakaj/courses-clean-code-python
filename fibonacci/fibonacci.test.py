@@ -11,8 +11,8 @@ class FibonacciTest(TestCase):
     def setUp(self):
         self.fibonacci = Fibonacci()
 
-    def test_0_should_yield_0(self):
-        pass
+    def test_index_0_should_yield_0(self):
+        self.assertEqual(self.fibonacci.calc(0), 0)
 
 
 if __name__ == '__main__':
