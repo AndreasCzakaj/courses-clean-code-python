@@ -4,7 +4,7 @@ from parameterized import parameterized
 
 from currying import print_address_line1, translation_provider, Employee, create_address_line_printer
 
-class UuidGeneratorNaiveRandomImplTest(TestCase):
+class AddressLinePrinterTest(TestCase):
 
     def setUp(self):
         self.sut = None
