@@ -1,20 +1,20 @@
 class Main:
-    def start():
+    def start(self):
         app = App()
         app.begin()
 
 class App:
-    def begin():
+    def begin(self):
         service = SomeService()
         service.process()     
 
 class SomeService:
-    def process():
+    def process(self):
         db = TheRealDatabase()
         db.load()     
 
 class TheRealDatabase:
-    def load():
+    def load(self):
         pass       
 
 

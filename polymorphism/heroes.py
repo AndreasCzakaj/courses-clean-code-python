@@ -2,12 +2,12 @@ from abc import ABC, abstractmethod
 
 class Hero(ABC):
     @abstractmethod
-    def useForce():
+    def useForce(self):
         pass
 
 
 class Storm(Hero):
-    def useForce():
+    def useForce(self):
         return "pust, pust"
 
 

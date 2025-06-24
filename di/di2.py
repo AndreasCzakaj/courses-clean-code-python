@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 class DatabasePort(ABC):
     @abstractmethod
-    def get():
+    def get(self):
         pass
 
 
@@ -18,7 +18,7 @@ class App:
     def __init__(self, service: SomeService):
         self.service = service
 
-    def begin():
+    def begin(self):
         service = SomeService()
         service.process()     
 
@@ -36,13 +36,13 @@ class Main:
 
 
 class DatabaseAdapter(DatabasePort):
-    def get():
+    def get(self):
         db = TheRealDatabase()
         db.load()     
 
 
 class TheRealDatabase:
-    def load():
+    def load(self):
         pass       
 
 

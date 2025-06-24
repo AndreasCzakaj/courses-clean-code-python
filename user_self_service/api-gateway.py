@@ -1,12 +1,12 @@
 # Small, single purpose, SRP class
 class UserLogin:  
-    def login():
+    def login(self):
         print("I'm doing some login stuff...")
         pass
 
 # Small, single purpose, SRP class
 class UserSignUp:  
-    def signUp():
+    def signUp(self):
         print("I'm doing some signUp stuff...")
         pass
 

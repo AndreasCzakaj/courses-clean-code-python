@@ -224,13 +224,13 @@ class ShoppingCart(Protocol):
 
 class ShoppingCartLoggingDecorator(ShoppingCart):
   def __init__(self, delegate: ShoppingCart, logger):
-    self._delegate: delegate
-    self._logger: logger
+    self.__delegate: delegate
+    self.__logger: logger
 
   def checkout(self) -> None:
-    self._logger.log("Checkout started")
+    self.__logger.log("Checkout started")
     self.checkout()
-    self._logger.log("Checkout done")
+    self.__logger.log("Checkout done")
 
 
 

@@ -14,7 +14,6 @@ class Test(TestCase):
         if isinstance(self.duck, RubberDuck):
             self.duck.insertBatteries()
         self.duck.swim()
-        pass
 
 
 if __name__ == '__main__':
