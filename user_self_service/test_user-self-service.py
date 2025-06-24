@@ -2,7 +2,7 @@ import unittest
 from unittest import TestCase, skip, SkipTest
 from parameterized import parameterized
 
-from user_self_service import LoginService, Credentials, UserDaoDictionaryImpl, User, LoginError
+from user_self_service.user_self_service import LoginService, Credentials, UserDaoDictionaryImpl, User, LoginError
 
 class LoginServiceTest(TestCase):
 

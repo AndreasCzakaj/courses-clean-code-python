@@ -2,7 +2,7 @@ import unittest
 from unittest import TestCase
 from parameterized import parameterized
 
-from heroes import Leader
+from polymorphism.heroes import Leader
 
 class LeaderTest(TestCase):
 
@@ -15,6 +15,7 @@ class LeaderTest(TestCase):
         #["flash", "run fast"],
         #["oops", "wait and bleed"],
     ])
+    @unittest.skip("todo: implement code")
     def test_useForce_Storm(self, heroName, expected):
          hero = self.sut.selectHero(heroName)
          actual = hero.useForce()

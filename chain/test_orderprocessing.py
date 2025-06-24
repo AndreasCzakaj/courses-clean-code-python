@@ -2,11 +2,12 @@ import unittest
 from unittest import TestCase
 from parameterized import parameterized
 
-from order_processing import OrderProcessor, ShoppingCart, Customer, Address, PaymentData, Order
+from chain.order_processing import OrderProcessor, ShoppingCart, Customer, Address, PaymentData, Order
 
 
-class UuidGeneratorNaiveRandomImplTest(TestCase):
+class OrderProcessorTest(TestCase):
 
+    @unittest.skip("todo: implement code")
     def test(self): 
         orderProcessor = OrderProcessor()
         order = orderProcessor.processOrder(

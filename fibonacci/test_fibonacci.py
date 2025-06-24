@@ -2,7 +2,7 @@ import unittest
 from unittest import TestCase
 from parameterized import parameterized
 
-from fibonacci import Fibonacci
+from fibonacci.fibonacci import Fibonacci
 
 
 

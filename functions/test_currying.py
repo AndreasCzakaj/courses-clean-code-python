@@ -2,7 +2,7 @@ import unittest
 from unittest import TestCase
 from parameterized import parameterized
 
-from currying import print_address_line1, translation_provider, Employee, create_address_line_printer
+from functions.currying import print_address_line1, translation_provider, Employee, create_address_line_printer
 
 class AddressLinePrinterTest(TestCase):
 

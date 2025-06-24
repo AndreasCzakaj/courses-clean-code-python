@@ -1,5 +1,5 @@
 class MyService:
-    def doStuff(self, input: int, type: str):
+    def doStuff(self, input: int):
         if input == 1:
             raise ValueError("1")
         if input == 2:
@@ -14,9 +14,7 @@ class MyClient:
         try:
             service.doStuff(input)
         except ServiceError:
-            return 1
-        except MyCustomError:
-            return 2
+            return 666
 
 from abc import ABC, abstractmethod
 
@@ -28,7 +26,7 @@ class ServiceError(ABC, Exception):
         return f"{self.message})"
     
 
-class MyCustomError(ServiceError):
+class MyCustomError(Exception):
     def __init__(self, message):
         super().__init__(message)
     

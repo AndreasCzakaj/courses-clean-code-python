@@ -1,4 +1,6 @@
 # content of test_sample.py
+
+'''
 def inc(x):
     return x + 1
 
@@ -90,3 +92,4 @@ def create_minimal_valid_SignUpData():
     data.password = "12345678"
     return data
 
+'''

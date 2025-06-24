@@ -2,7 +2,7 @@ import unittest
 from unittest import TestCase
 from parameterized import parameterized
 
-from duck import RubberDuck
+from liskov.duck import RubberDuck
 
 
 class Test(TestCase):

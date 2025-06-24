@@ -2,7 +2,7 @@ import unittest
 from unittest import TestCase
 from parameterized import parameterized
 
-from UuidGeneratorNaiveRandomImpl import UuidGeneratorNaiveRandomImpl
+from uuid.UuidGeneratorNaiveRandomImpl import UuidGeneratorNaiveRandomImpl
 
 
 class UuidGeneratorNaiveRandomImplTest(TestCase):
