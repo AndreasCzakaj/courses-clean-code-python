@@ -1,6 +1,12 @@
 import random
+from abc import ABC, abstractmethod
 
-class UuidGeneratorNaiveRandomImpl:
+class UuidGenerator(ABC):
+    @abstractmethod
+    def create(self):
+        pass
+
+class UuidGeneratorNaiveRandomImpl(UuidGenerator):
     def __init__(self):
         self.random = random.SystemRandom()  # Secure random equivalent to SecureRandom
 
