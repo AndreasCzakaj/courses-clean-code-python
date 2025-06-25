@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+from typing import Protocol
+
 
 class UserSelfServiceError(ABC, Exception):
     def __init__(self, message):
@@ -8,48 +10,34 @@ class LoginError(UserSelfServiceError):
     def __init__(self, message):
         super().__init__(message)
 
-
-class DataAccessObject(ABC):
-    @abstractmethod
-    def get(self, identifier: str):
-        pass
-
-
 class User:
-    email: str
-    password: str
+    def __init__(self):
+        self.username = ""
+        self.password = ""
 
-class UserDaoDictionaryImpl(DataAccessObject):
-    def __init__(self, repo = {}):
+class UserDao(Protocol):
+    def get(self, identifier: str) -> User | None:
+        ...
+
+class UserDaoDictImpl(UserDao):
+    def __init__(self, repo: dict = {}):
         self.repo = repo
 
-    def get(self, identifier: str) -> User:
-        if identifier in self.repo:
-            return self.repo.get(identifier)
-        return None
-
-    #def save(self, identifier: str, data: User) -> User:
-    #    self.repo[identifier] = data
-    #    return data
-
-
-
-class Credentials:
-    email: str
-    password: str
-
-class UserSession:
-    id: str
+    def get(self, identifier: str) -> User | None:
+        return self.repo.get(identifier, None)
 
 
 class LoginService:
-    def __init__(self, userDao: DataAccessObject) -> None:
-        self.userDao = userDao
+    def __init__(self, user_dao: UserDao):
+        self._user_dao = user_dao
 
-    def login(self, credentials: Credentials) -> UserSession:
-        user = self.userDao.get(credentials.email)
-        if user == None:
-            raise LoginError("No such user or wrong password")
+    def login(self, credentials: dict):
+      user = self._user_dao.get(credentials["userName"])
+      if user is None:
+        raise LoginError("unknown user or wrong password")
+
+      return {}
+
         
 
 
